@@ -1,0 +1,17 @@
+1. Make header and footer.
+2. Add page to add "Things"
+3. Make page that changes "Things" to "action", "project", "trash", "maybe/later", "reference"
+3-1. If you decide to change things to Action, make a form to distingush those action in certain importance
+this may contain :
+type : (Project, Action, promise, Check, Habit, Routine)
+
+
+Estimated Spending Time : (under 2 minitues, 2~30 min, 30 ~ 2hour, 2~8 hours, 8~24 hours, 24~72hours, 72hour+) - when 72+ is selected, this must be distinguished as "Project type"
+
+
+repeatability : (repeat, one-off)
+-repeat rate : (day, week, month, year, designate when repeated)
+-repeat due : (date)
+
+Habit rate : can be selected multiple option.
+(after some )
