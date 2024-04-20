@@ -1,17 +1,63 @@
-1. Make header and footer.
-2. Add page to add "Things"
+NO. This not what Todo... this is brain storming. We should make todo by small, function based approach.
+
+
+
+
+
+1. Think. What kind of state I can have. Each Web page should have allocated UI/UX.
+1) Unknown(worst. this must not happen. but sometime, it may happen.) : where user has no response for Routine change long time. Which means plan may change according to user's behaviour at missing time.
+This may need additional sorting/distingushing task for user
+Needed Button : Proceed Distinguising
+2) Failed : User reported that he/she failed to manage his/her behaviour.
+Needed Button : Retrieve
+3) Acting : User currently proceed what planner designate.
+Needed Button : Done / Prolong
+4) Waiting : user has no response by short length of time. which means, Unresponded time may not affecting current behaviour.
+Needed Button : Proceed
+5) Can't decide : According to "Rules", Program can't judge which activity should be held.
+This may caused by 
+"No Rule for such case"(Error case. When you see this, you need to fix.)
+Need Button : Just inform me 
+"Action Evaluation Value may same between several action."
+Needed Button : Select one of them(List of button may appropriate).
+"No possible activity remain."
+Needed Button : Add new task.
+6) Fixing : program currently on fixing. Just inform Promise type tasks.
+Need Button : Retrieve
+
+
+2. Add page an element (or subpage) that add "Things"
 3. Make page that changes "Things" to "action", "project", "trash", "maybe/later", "reference"
 3-1. If you decide to change things to Action, make a form to distingush those action in certain importance
 this may contain :
-type : (Project, Action, promise, Check, Habit, Routine)
+Type : (Project, Action, promise, Check, Habit, Routine)
+Importance : (
+    Mandatory - Ex.company_work.company_promise.Distingushing_task, 
+    Critical - health care.maintain_friendship.coworker_relation.Take_Care_of_family.maintainence_passive_planning, 
+    Good_To_Do - Investigation.read_book.Learn_new_interesting_thing.hobby, 
+    Not_importance - play_the_game,internet_surfing,watch_youtube/Netflix)
+Important Idea about importance : Good plan should do critical/ good to do things in balance although I am in busy.
 
 
+Needed mentality : (Hard, medium, easy, Magnet)
 Estimated Spending Time : (under 2 minitues, 2~30 min, 30 ~ 2hour, 2~8 hours, 8~24 hours, 24~72hours, 72hour+) - when 72+ is selected, this must be distinguished as "Project type"
-
-
 repeatability : (repeat, one-off)
 -repeat rate : (day, week, month, year, designate when repeated)
 -repeat due : (date)
-
 Habit rate : can be selected multiple option.
-(after some )
+..extra. this may added after I've tested them.
+4. Make "distingush things as 'special Repetitive task'.
+5. Make planning algoritm.
+
+---Later Lists:
+accept, decline Button.
+Time slicing functionality (ex - ppomo technique)
+emergency button.
+available time finder.
+instant promise function.
+authentication.
+
+
+---later later list : 
+wearable device that can inform those selective information about time.
+It should contain : convenient "Things" add functionality
