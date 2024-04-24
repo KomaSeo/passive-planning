@@ -1,9 +1,25 @@
-NO. This not what Todo... this is brain storming. We should make todo by small, function based approach.
+0. Make current environment
+0-0) add function that store location infomation on server with name. Store those location
+implement REST API to manage locations.
+0-1) get weather in stored location
+0-2) get weather of stored locations.
+
+
+later) get informantion whether today is holiday or not.
+
+
+
+1. Make database, And frontend that show "Things".
+1-0. get instance on amazon AWS.
+1-1. Install postgre SQL on desktop.
+1-2. Learn how to use postgre SQL.
+1-3. implement add Things functionality on backend using postgre SQL.
+you will think what will be needed after implementing this.
 
 
 
 
-
+NO. Below things are not what Todo... this is brain storming. We should make todo by small, function based approach.
 1. Think. What kind of state I can have. Each Web page should have allocated UI/UX.
 1) Unknown(worst. this must not happen. but sometime, it may happen.) : where user has no response for Routine change long time. Which means plan may change according to user's behaviour at missing time.
 This may need additional sorting/distingushing task for user
