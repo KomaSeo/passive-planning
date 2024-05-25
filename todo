@@ -1,3 +1,19 @@
+1. postgreSQL 접근 하는 법 알아보기, 테스트.
+2. postgreSQL에 task table 만들기.
+3. postgreSQL task table에 집어넣는 코드 만들기.
+
+4. routing을 express 쓰는 경우 어떻게 처리하는지 알아보기.
+5. task에 대해서. RESTful API 만들기
+6. task 추가하고 지우는 HTML, JS 작성.
+
+
+
+
+
+
+not important.
+create database code in initializeServer.sql. - Currently it's commented out cause SQL policy is prohibiting create database on transaction block.
+
 0. Make current environment
 0-0) add function that store location infomation on server with name. Store those location
 implement REST API to manage locations.

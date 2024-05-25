@@ -1,7 +1,7 @@
 
 
 function HandleTask(app,sqlServer){
-    app.post("./",async(req,res)=>{
+    app.post("/task",async(req,res)=>{
         const taskName = req.body.name;
         const taskTime = new Date().toISOString().slice(0, 19).replace('T', ' ');;
         const insertion_command = `insert into tasks value(${taskName}, ${taskTime})`
