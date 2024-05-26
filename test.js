@@ -6,10 +6,16 @@ const { Client } = pg
 const client = new Client({
     user : API.databaseID,
     password : API.databasePassword,
-    database : "passivePlanning"
+    database : "passiveplanning"
 })
 await client.connect()
  
-const res = await client.query('SELECT $1::text as message', ['Hello world!'])
-console.log(res.rows[0].message) // Hello world!
+
+async function addTask(taskName){
+    const currentTime = new Date();
+    const generatedtime = currentTime.toISOString();
+    const result = await client.query('INSERT INTO tasks (id, name, generatedtime) VALUES (DEFAULT, $1, $2)',[taskName,generatedtime])
+    return result;
+}
+await addTask("exampleTask")
 await client.end()

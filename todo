@@ -1,7 +1,3 @@
-1. postgreSQL 접근 하는 법 알아보기, 테스트.
-2. postgreSQL에 task table 만들기.
-3. postgreSQL task table에 집어넣는 코드 만들기.
-
 4. routing을 express 쓰는 경우 어떻게 처리하는지 알아보기.
 5. task에 대해서. RESTful API 만들기
 6. task 추가하고 지우는 HTML, JS 작성.
@@ -12,7 +8,12 @@
 
 
 not important.
-create database code in initializeServer.sql. - Currently it's commented out cause SQL policy is prohibiting create database on transaction block.
+create database code in initializeServer.sql. - Currently it's commented out cause SQL policy is prohibiting create database on transaction block.'
+개인적으로 궁금한 점.
+1. serial 같은 거 쓸 때 default 키워드를 values 값으로 넘겨주면 postgreSQL에서 자동으로 값을 할당해주는데.
+node에서 query할 때 파라메터에 default를 넘겨주고 싶을 때 기존의 코드를 수정하지 않으면서 parameter로 넣어줄 수 있는 방법이 있나?
+파라메터에 default라고 쓰면 아마 node가 declare 되지 않은 변수라고 생각할거고 'default'라고 적으면 sql에서 text type이라고 생각하니 안되니까
+그렇다고 if문으로 'values (default, $1)'  'values ($1, $2)' 이렇게 두개로 나눠서 처리하기에는 column의 갯수가 많아지면 O(2^n) 만큼 if문이 적혀야하는데 그건 비효율적이잖아. 
 
 0. Make current environment
 0-0) add function that store location infomation on server with name. Store those location

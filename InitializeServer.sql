@@ -2,6 +2,6 @@
 create table Tasks(
 	ID serial,
 	Name text,
-	generatedTime time with time zone,
+	generatedTime timestamp with time zone,
 	primary key (ID)
-)
+);
