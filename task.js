@@ -25,7 +25,7 @@ async function addTask(taskName){
 
 
 taskRouter.route("/").get((req,res)=>{
-
+    console.log("router Work")
 }).post((req,res)=>{
 
 }).delete((req,res)=>{
@@ -35,8 +35,11 @@ taskRouter.route("/").get((req,res)=>{
 }).patch((req,res)=>{
 
 })
-taskRouter.route("/:id").get((req,res)=>{
 
+taskRouter.route("/:id").get(async (req,res)=>{
+    const targetId = req.params.id;
+    queryResult = await client.query('SELECT * FROM tasks WHERE id=$1', targetId);
+    res.status(202).send(queryResult);
 }).post((req,res)=>{
 
 }).delete((req,res)=>{
@@ -48,7 +51,7 @@ taskRouter.route("/:id").get((req,res)=>{
 })
 
 
-
-
-await addTask("exampleTask")
-await client.end()
+console.log("task.js called")
+export default taskRouter
+//await addTask("exampleTask")
+//await client.end()
