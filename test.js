@@ -1,21 +1,19 @@
-import pg from 'pg'
-import fs from 'fs'
-const API_JSON = fs.readFileSync('./API_JSON');
-const API = JSON.parse(API_JSON); 
-const { Client } = pg
-const client = new Client({
-    user : API.databaseID,
-    password : API.databasePassword,
-    database : "passiveplanning"
-})
-await client.connect()
- 
-
-async function addTask(taskName){
-    const currentTime = new Date();
-    const generatedtime = currentTime.toISOString();
-    const result = await client.query('INSERT INTO tasks (id, name, generatedtime) VALUES (DEFAULT, $1, $2)',[taskName,generatedtime])
-    return result;
+import express from 'express'
+const app = express()
+const port = 3000
+const mocked_task1 = {
+    name : 'exampleTask',
+    generatedDate : new Date().toISOString(),
+    ID : 1
 }
-await addTask("exampleTask")
-await client.end()
+const mocked_task2 = {
+    name : 'exampleTask2',
+    generatedDate : new Date().toISOString(),
+    ID : 2
+}
+app.get('/',(req,res,next)=>{
+    res.render('Task.ejs',)
+})
+app.listen(port, ()=>{
+    console.log(`listen to port : ${port}.`)
+})
