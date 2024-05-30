@@ -17,7 +17,7 @@
             "type": "node",
             "request": "launch",
             "name": "play Test.js",
-            "program": "${workspaceFolder}\\test.js"
+            "program": "${workspaceFolder}\\unitTest\\${fileBasename}"
         }
     ]
 }

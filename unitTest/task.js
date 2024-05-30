@@ -8,7 +8,7 @@ const checkFunction = (req,res,next)=>{
     next()
 }
 app.use(morgan('tiny'))
-app.use('./task',[checkFunction,taskRouter])
+app.use('/task',[checkFunction,taskRouter])
 app.listen(port,()=>{
     console.log("Test server listened.")
 })
