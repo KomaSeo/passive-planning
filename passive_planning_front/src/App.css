@@ -1,38 +1,591 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+body {
+  height: 50vh;
+  display: block;
+  font-family: 'Roboto', sans-serif;
   color: white;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  opacity: 1;
+  background-attachment: fixed; 
 }
 
-.App-link {
-  color: #61dafb;
+.morning {
+  background-image: url("../public/chris-liu-beers-40853-unsplash.jpg");
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.afternoon {
+  background-image: url("../public/sudhagar-shanmugasigamani-66397-unsplash.jpg");
+}
+
+.evening {
+  background-image: url("../public/shane-perry-11379-unsplash.jpg");
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.top-row {
+  position:absolute;
+  top:0;
+  left:25px;
+  right:25px;
+  font-size: 20px;
+}
+
+#quicklinks {
+  margin-top: 25px;
+}
+
+/* Links */
+#inputbox {
+  background-color: rgb(10, 10, 10);
+  border-radius: 4%;
+  height: auto;
+  width: 175px;
+  opacity: 0.8;
+  color: white;
+  margin: 0px;
+  position: fixed;
+  left: 10px;
+  top: 75px;
+  padding: 10px;
+}
+
+#linkname {
+  background-color: rgb(10, 10, 10);
+  color: grey;
+  border: none;
+  width: 153px;
+  margin: 0px;
+  padding: 0px;
+  height: 20px;
+  text-align: left;
+  font-size: 15px; 
+  padding-left: 5px;
+}
+
+#linkurl {
+  background-color: rgb(10, 10, 10);
+  color: grey;
+  border: none;
+  width: 153px;
+  margin: 0px;
+  padding: 0px;
+  height: 20px;
+  text-align: left;
+  font-size: 15px; 
+  padding-left: 5px;
+}
+
+#newlinks {
+  padding-left: 10px;
+  color: grey;
+  font-size: 15px; 
+  padding-top: 5px;
+}
+
+#linkurl {
+  background-color: rgb(10, 10, 10);
+  color: grey;
+  border: none;
+  width: 150px;
+  margin: 0px;
+  padding: 0px;
+  height: 20px;
+  text-align: left;
+  font-size: 18px; 
+  padding-left: 10px;
+}
+
+#newlinks {
+  padding-left: 10px;
+  color: grey;
+}
+
+#linkbutton {
+  color: lightgrey;
+  background-color: rgb(10, 10, 10);
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.chromelink {
+  color: lightgrey;
+  background-color: rgb(10, 10, 10);
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+  width: 140px;
+  text-align: left;
+  padding: 5px;
+}
+
+#linkbutton:focus, #linkname:focus, #linkurl:focus, .chromelink:focus {outline:0;}
+
+.chromelink {
+  color: lightgrey;
+  background-color: rgb(10, 10, 10);
+  border: none;
+  font-size: 15px;  
+  cursor: pointer; 
+}
+
+.inputlink {
+  display: none;
+}
+
+.slinkinput {
+  padding: 2px;
+  color: lightgrey;
+} 
+
+.linkinputs {
+  display: none;
+  font-size: 15px;  
+  color: lightgrey;
+  padding-top: 5px;
+}
+
+#dellink {
+  display: none;
+  cursor: pointer;
+}
+
+#alllinks {
+  display: grid;
+  grid-template-columns: 1fr 35px;
+  grid-template-rows:1;   
+}
+
+#alllinks:hover #dellink {
+  display: inline;
+}
+
+#favlinks:hover #favlinks:active {
+  color: white;
+} 
+
+.chromelink:hover, .chromelink:active {
+  color: white;
+} 
+
+#linkbutton:hover, #linkbutton:active {
+  color: white;
+} 
+
+.show {
+  display: block;
+}
+
+.hide {
+  display:  none;
+}
+
+#submitlink {
+  display: none;
+}
+
+/* Center */
+.center {
+  display: grid;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  margin-top: 165px;
+}
+
+/* Clock */
+.app-container {
+  letter-spacing: -5px;
+  font-weight: 600;
+  line-height: 1;
+  height: 145px;
+}
+
+.rc {
+  font-size: 970%;
+  z-index: 15;
+  position: relative;
+  display: inline-block;
+}
+
+.milc {
+  font-size: 970%;
+  color: white;
+  z-index: 15;
+  position: relative;
+  display: inline-block;
+}
+
+#ampm {
+  font-size: 22px;
+  display: inline-block;
+  position: relative;
+  letter-spacing: 2px;
+}
+
+#greeting {
+  display: block;
+  font-size: 55px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0;
+  white-space: nowrap;
+  height: 80px;
+}
+
+/* Center Below */
+.center-below {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 40px;
+}
+
+h3 {
+  display: block;
+  text-align: center;
+  font-size: 30px;
+}
+
+#focus {
+  width: 382px;
+  margin: 20px auto;
+  background: 0;
+  border: 0;
+  border-bottom: 2px solid #fff;
+  color: #fff;
+  outline: 0;
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+/* Bottom */
+.bottom {
+  display: block;
+  width: 100%;
+  text-align: center;
+  position: fixed;
+  margin: auto;
+}
+
+/* Todo */
+#todo {
+  margin: auto;
+  height: auto;      
+  font-size: 21px;
+  color: white;
+  position: absolute;
+  right: 65px;
+  bottom: 40px;
+} 
+
+.todo {
+  background-color: rgb(10, 10, 10);
+  grid-template-rows: auto 30px;
+  opacity: .8;
+  height: auto;
+  width: 320px;
+  z-index: 3;
+  overflow-wrap: break-word;
+  overflow: hidden;
+  visibility: hidden;
+  position: absolute;
+  bottom: 75px;
+  border-radius: 2%;
+  right: 20px;
+}
+
+.visible {
+  visibility: visible;
+}
+
+.invisible {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s .2s, opacity .2s linear;
+}
+.gone {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s .2s, opacity .2s linear;
+}
+.line {
+  text-decoration: line-through;
+}
+
+.newtodo {
+  margin-top:50px;
+  border-radius: 20%/50%;
+  height: 150px;
+  padding-top: 7px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 7px;
+  margin-bottom: 30px;
+  background-color: #525960;
+}
+
+.icon {
+  position: absolute;
+}
+
+.todonew {
+  height: 50px;
+  position: relative;
+  left: 100px;
+}
+
+.todoheader {
+  /* display:grid; */
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  /* margin-bottom: 30px; */
+  margin-top: 11px;
+  margin-left: 10px;
+  font-size: 20px;
+  height: 30px;
+}
+
+.todoheaderleft {
+  /* padding-top:7px; */
+  /* padding-left: 5px; */
+  position: relative;
+  text-align: left;
+  /* height: 30px; */
+  height: 0px;
+}
+
+.todoheaderright {
+  position: relative;
+  text-align: right;
+  /* background-color: transparent;
+  border: none;
+  color: white;
+  font-size: small; */
+  /* padding-top: 3px; */
+  /* padding-right: 5px; */
+}
+
+.todogreeting {
+  padding-bottom: 30px;
+  margin-top: 15px;
+  position: relative;
+  left: 75px;
+}
+
+.form-control {
+  background-color: transparent;
+  color: white;
+  outline: none;
+  border: none;
+  width: 300px;
+  height: 40px;
+  margin-top:10px;
+  text-align: left;
+  font-size: medium;
+  margin-left: 6px;
+}
+
+input::placeholder {
+   padding-right: 300px;
+}
+
+.fa-square {
+  position: relative;
+  left:100px;
+}
+
+.fa-check-square {
+  position: relative;
+  left:100px;
+}
+
+.deletetodo {
+  position: absolute;
+  background-color: transparent;
+  border: none;
+  color: transparent;
+  font-size: small;
+  left: 90%;
+  text-align: center;
+  line-height: 25px; 
+  vertical-align: center;
+}
+
+.optionlist {
+  display: block;
+}
+
+.deletetodo:hover{
+  background-color: #545f56;
+  border-radius: 50%;
+  color: white;
+  height: 23px;
+  width: 23px;
+  text-align: center;
+  line-height: 23px;
+  vertical-align:middle;
+}
+
+.options {
+  margin-top: 5px;
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: small;
+}
+
+.options:hover {
+  background-color: #545f56;
+  border-radius: 50%;
+  height: 23px;
+  width: 23px;
+  text-align: center;
+  line-height: 23px;
+  vertical-align:middle;
+}
+
+textarea {
+  position: relative;
+  left: 20px;
+  max-width: 200px;
+  height: 15px;
+  box-decoration-break: clone; 
+}
+
+.contenttodo {
+  max-width: 230px;
+  text-align: left;
+  margin-left: 20px;
+  right: 5px;
+  word-break: break-all;
+}
+
+.textDisplay {
+  word-break: break-all;
+  position: relative;
+  background-color: transparent;
+  width: 300px;
+  text-align: left;
+  height: 15px;
+  color:white;
+  outline: none;
+  border: none;
+  vertical-align: middle;
+}
+
+.main {
+  display: none;
+}
+
+.check-marker {
+  position: relative;
+}
+
+/* Quote */
+.quote-container {
+  position: fixed;
+  justify-content: center;
+  text-align: center;
+  width: 350px;
+  height: 75px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+
+.quote-text {
+  text-align: center;
+  font-size: 17px;
+  color: white;
+  white-space: pre-wrap;
+}
+
+/* Media Stylesheet */
+@media only screen and (max-width: 600px) {
+
+  .top-row {
+      font-size: 15px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .rc {
+      font-size: 970%;
+  }
+  
+  .milc {
+      font-size: 970%;
+  }
+  
+  #ampm {
+      font-size: 22px;
+  }
+
+  .greeting {
+      font-size: 25px;
+      white-space: nowrap;
+  }
+
+  .center-below {
+      font-size: 25px;
+  }
+
+  .quote-container {
+      width: 100%;
   }
 }
