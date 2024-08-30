@@ -10,6 +10,7 @@
         "strictNullChecks": true,
         "strictFunctionTypes": true,
         "noImplicitThis": true,
-        "moduleResolution": "Node"
+        "moduleResolution": "Node",
+        "module": "ESNext"
     }
 }
